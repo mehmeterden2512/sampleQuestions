@@ -1,5 +1,9 @@
 package sorular4;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class C01_soru37Bonus {
     public static void main(String[] args) {
         //Soru 37-)
@@ -19,5 +23,22 @@ public class C01_soru37Bonus {
         //1 2 3 2 1 6 3 4 5 2
         //ÇIKTI:
         //Birbirinden farkli girilen sayilar: 1 2 3 6 4 5
+            int[] arr={1, 2 ,3 ,2 ,1, 6 ,3 ,4, 5 ,2,5,8};
+        System.out.println(Arrays.toString(eliminateDuplicates(arr)));
+
+    }
+
+    public static int[] eliminateDuplicates(int[] list) {
+        List<Integer> tekrarsiz = new ArrayList<>();
+        for (int i = 0; i <list.length; i++) {
+            if (!tekrarsiz.contains(list[i])){
+                tekrarsiz.add(list[i]);
+            }
+        }
+            int []eliminateDuplicates=new int[tekrarsiz.size()];
+        for (int i = 0; i <tekrarsiz.size() ; i++) {
+            eliminateDuplicates[i]=tekrarsiz.get(i);
+        }
+        return eliminateDuplicates;
     }
 }
